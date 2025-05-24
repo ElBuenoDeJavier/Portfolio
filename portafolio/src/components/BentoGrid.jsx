@@ -1,3 +1,5 @@
+import TextoAnimado from "./TextoAnimado";
+
 export default function BentoGridDisplay(){
 
     // Estilo común para cada celda del Bento Grid
@@ -35,14 +37,9 @@ export default function BentoGridDisplay(){
                     Descarga mi CV</span>
                 </span>
             </a>
-            <h1 className="font-bold text-5xl mb-4">
-                Javier Uberos{" "}
-                <span className="bg-gradient-to-tl from-slate-800 via-violet-500 to-zinc-400 bg-clip-text text-transparent">
-                    Web Developer
-                </span>
-            </h1>
-
-            <div className="mt-30 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-4 gap-2 sm:gap-4 md:h-[calc(100vh-4rem)] md:max-h-[800px]">
+                <TextoAnimado />
+            
+            <div className="mt-30 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 md:grid-rows-4 gap-2 sm:gap-4 md:h-[calc(100vh-4rem)] md:max-h-[800px]">
                 {/* ----- Fila 1 ----- */}
                 <div
                 className={`${itemBaseStyle} md:col-span-2 md:row-span-1`}
@@ -60,9 +57,8 @@ export default function BentoGridDisplay(){
 
                 <div
                 className={`${itemBaseStyle} md:col-start-4 md:col-span-1 md:row-span-2`}
-                aria-label={cellContents[2]}
                 >
-                <p className={placeholderContentStyle}>{cellContents[2]}</p>
+                <p>Imagen</p>
                 </div>
 
                 {/* ----- Fila 2 y 3 (elementos altos) ----- */}
@@ -85,22 +81,15 @@ export default function BentoGridDisplay(){
                 className={`${itemBaseStyle} md:col-start-4 md:col-span-1 md:row-start-3 md:row-span-1`}
                 aria-label={cellContents[5]}
                 >
-                <p className={placeholderContentStyle}>{cellContents[5]}</p>
+                <p>Redes sociales, pero de trabajo</p>
                 </div>
 
                 {/* ----- Fila 4 ----- */}
                 <div
-                className={`${itemBaseStyle} md:col-start-1 md:col-span-3 md:row-start-4 md:row-span-1`}
+                className={`${itemBaseStyle} md:col-start-1 md:col-span-4 md:row-start-4 md:row-span-1`}
                 aria-label={cellContents[6]}
                 >
                 <p className={placeholderContentStyle}>Imagen de fondo con algo de blur e información</p>
-                </div>
-
-                <div
-                className={`${itemBaseStyle} md:col-start-4 md:col-span-1 md:row-start-4 md:row-span-1`}
-                aria-label={cellContents[9]}
-                >
-                <p className={placeholderContentStyle}>{cellContents[9]}</p>
                 </div>
             </div>
         </div>
