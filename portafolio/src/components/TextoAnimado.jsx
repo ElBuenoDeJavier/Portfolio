@@ -2,7 +2,13 @@ import React, { useEffect } from "react";
 
 export default function TextoAnimado() {
     useEffect(() => {
-        const words = ["Web Developer", "Hello, World!", "Full Stack Developer"];
+        const words = [
+            "I'm Web Developer",
+            "I'm Full Stack Developer",
+            "Hello, World!",
+            "I'm Frontend Developer",
+            "I'm Backend Developer"
+        ];
         let i = 0;
         let j = 0;
         let currentWord = "";
@@ -13,8 +19,12 @@ export default function TextoAnimado() {
             currentWord = words[i];
             const typewriterElem = document.getElementById("typewriter");
             if (!typewriterElem) return;
+
+            // Add the blinking cursor (vertical bar)
+            const cursor = '<span class="animate-blink">|</span>';
+
             if (isDeleting) {
-                typewriterElem.textContent = currentWord.substring(0, j - 1);
+                typewriterElem.innerHTML = currentWord.substring(0, j - 1) + cursor;
                 j--;
                 if (j === 0) {
                     isDeleting = false;
@@ -22,12 +32,16 @@ export default function TextoAnimado() {
                     if (i === words.length) {
                         i = 0;
                     }
+                    timeoutId = setTimeout(type, 400); // Pause before typing next word
+                    return;
                 }
             } else {
-                typewriterElem.textContent = currentWord.substring(0, j + 1);
+                typewriterElem.innerHTML = currentWord.substring(0, j + 1) + cursor;
                 j++;
                 if (j === currentWord.length) {
                     isDeleting = true;
+                    timeoutId = setTimeout(type, 1200); // Pause at end of word
+                    return;
                 }
             }
             timeoutId = setTimeout(type, 100);
@@ -41,12 +55,11 @@ export default function TextoAnimado() {
     return (
         <div className="h-20">
             <h1 className="font-bold text-6xl mb-4 flex flex-col items-center justify-center">
-                Javier Uberos{" "}
+                Welcome!{" "}
                 <span
                     id="typewriter"
                     className="text-4xl bg-gradient-to-tl from-slate-800 via-violet-500 to-zinc-400 bg-clip-text text-transparent"
                 >
-                    Web Developer
                 </span>
             </h1>
         </div>
