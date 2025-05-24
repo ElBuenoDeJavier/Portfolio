@@ -55,7 +55,7 @@ export default function TextoAnimado() {
     return (
         <div className="h-20">
             <h1 className="font-bold text-6xl mb-4 flex flex-col items-center justify-center">
-                Welcome!{" "}
+                ¡Bienvenido!{" "}
                 <span
                     id="typewriter"
                     className="text-4xl bg-gradient-to-tl from-slate-800 via-violet-500 to-zinc-400 bg-clip-text text-transparent"
